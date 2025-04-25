@@ -81,23 +81,17 @@ Add the following to your Claude Desktop configuration:
 ```json
 {
   "mcpServers": {
-    "polymarket_enhanced": {
+    "polymarket-mcp": {
       "command": "sh",
       "args": [
         "-c",
-        "cd /path/to/Mcp-polymarket && source venv/bin/activate && python3 enhanced_server_v3.py"
+        "cd /Onfinance-MCP-Polymarket && source .venv/bin/activate && PYTHONUNBUFFERED=1 python src/polymarket_mcp/server.py 2>/tmp/polymarket_server.log"
       ],
       "restartOnExit": true,
       "maxRestarts": 5
     }
-  },
-  "openApiResponseFormat": {
-    "polymarket_enhanced": {
-      "url": false,
-      "responseMode": "json"
-    }
   }
-}
+} 
 ```
 
 The configuration file can be found at:
